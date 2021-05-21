@@ -54,5 +54,10 @@ class HomeController extends Controller
         
     }
 
+    public function show_portugal(){
+        return view('portugalwizarding');
+    }
+
+
     
 }

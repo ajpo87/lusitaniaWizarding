@@ -69,7 +69,7 @@ class UserController extends Controller
         else if( strlen($password) < 8 && strlen($confirm_password) < 8){
             return redirect()->route('change_password')->with(['message' =>'Erro ! Password no minino com 8 Carateres']);
         }else{
-            return redirect()->route('change_password')->with(['message' =>'Erro ao guardar ! As passwords preenchidas diferente']);
+            return redirect()->route('change_password')->with(['message' =>'Erro ao guardar ! As passwords preenchidas diferentes']);
         }
         
        
