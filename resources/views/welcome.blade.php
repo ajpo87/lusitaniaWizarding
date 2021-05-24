@@ -85,6 +85,7 @@
                             <a href="{{ route('register') }}">Register</a>
                         @endif
                     @endauth
+                        <a class="nav-link" href="{{route('portugal')}}"> Portugal Wizarding </a> 
                 </div>
             @endif
 

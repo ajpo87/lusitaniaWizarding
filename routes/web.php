@@ -28,7 +28,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/configuracao','UserController@config')->name('config');
 Route::get('/change_password','UserController@change_password')->name('change_password');
 
-Route::get('/wizardingPortugal','HomeController@show_portugal')->name('portugal');
+Route::get('/wizardingPortugal','wizardingPortugalController@show_portugal')->name('portugal');
 
 Route::POST('/user/update','UserController@update')->name('user.update');
 Route::POST('/user/update_password','UserController@update_password')->name('user.update_password');
