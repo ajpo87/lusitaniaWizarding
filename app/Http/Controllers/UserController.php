@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 
 class UserController extends Controller
 {
@@ -17,6 +20,8 @@ class UserController extends Controller
     }
 
     public function update(Request $request){
+       
+        
         //conseguir utilizador identificado
         $user =\Auth::user();
         $id  = $user->id;
@@ -36,6 +41,14 @@ class UserController extends Controller
         $user->name = $name;
         $user->email = $email;
 
+         //subir imagem
+         $image_path = $request->file('image_path');
+        if($image_path){
+            $image_path_name = time().$image_path->getClientOriginalName();
+            
+            Storage::disk('users')->put($image_path_name, File::get($image_path));
+            $user->image = $image_path_name;
+        }
         //Executar consulta 
         $user->update();
 
@@ -71,11 +84,12 @@ class UserController extends Controller
         }else{
             return redirect()->route('change_password')->with(['message' =>'Erro ao guardar ! As passwords preenchidas diferentes']);
         }
-        
-       
-      
+    }
 
-       
+    public function getImage($filename){
+        $file = Storage::disk('users')->get($filename);
+        return new Response($file,200);
+
     }
 
 }

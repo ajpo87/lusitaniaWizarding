@@ -27,6 +27,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/configuracao','UserController@config')->name('config');
 Route::get('/change_password','UserController@change_password')->name('change_password');
+Route::get('/user/avatar/{filename}','UserController@getImage')->name('user.avatar'); 
 
 Route::get('/wizardingPortugal','wizardingPortugalController@show_portugal')->name('portugal');
 
