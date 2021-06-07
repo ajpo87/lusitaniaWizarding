@@ -40,5 +40,5 @@ Route::get('/select_team', 'TeamsController@index')->name('select_team');
 
 Route::get('/carregarImage','ImageController@CriarImagem')->name('image_create');
 Route::POST('/image/save','ImageController@save')->name('image.save');
-Route::get('/image/feli/{filename}','ImageController@getImage')->name('image.file'); 
+Route::get('/image/file/{filename}','ImageController@getImage')->name('image.file'); 
 
