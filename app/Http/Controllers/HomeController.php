@@ -49,7 +49,7 @@ class HomeController extends Controller
              return redirect()->route('select_team')->with(['message' =>'Selecionado para os: '.$equipa]);
         }
          else{
-             $images = Image::Orderby('id','desc')->get(); 
+             $images = Image::Orderby('id','desc')->paginate(2); 
             return view('home', ['images'=>$images] );
          }
 

@@ -14,31 +14,34 @@
     <div class="row justify-content-center">
         @foreach($images  as $image)
         <div class="col-md-8 espaco">
-            <div class="card" style="background:black">
+            <div class="card" >
                 @if($image->user->image)
-                    <div class="container-avatar">
+                    <div class="container-avatar" style="background:grey">
                             <img src="{{route('user.avatar' ,['filename'=>$image->user->image]  ) }}" class="avatar" />
                             {{ $image->user->name.' '.$image->user->surname}}
                     </div>
-                    <div class="card-body">
+                    <div class="card-body" style="background:black">
                         <div class="image-container">
                             <img src="{{route('image.file',['filename' => $image->image_path])}}">
                         </div>
                     </div>
                     <div class="likes">
-
+                        <img  class ="img_like" src="{{asset('/img/heart-black.png')}}"/>
+                        <a href="" class="btn btn-warning btn-comments" > Comentários({{count($image->comments)}}) </a>
                     </div>
                     <div class="description">
                         {{$image->description}}
                     </div>
-
-                   
+                                     
                 @endif
-            </div>
-                    
-         
+            </div>   
         </div>
-        @endforeach
+        @endforeach 
+    </div> 
+    <div class="clearfix"></div>
+    <div class="row justify-content-center" style = "margin-top:15px;">
+        {{$images->links()}} 
     </div>
 </div>
+
 @endsection
