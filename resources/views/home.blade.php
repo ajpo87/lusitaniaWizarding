@@ -19,6 +19,8 @@
                     <div class="container-avatar" style="background:grey">
                             <img src="{{route('user.avatar' ,['filename'=>$image->user->image]  ) }}" class="avatar" />
                             {{ $image->user->name.' '.$image->user->surname}}
+                            | Publicada  {{ \FormatTime::LongTimeFilter($image->created_at) }}
+
                     </div>
                     <div class="card-body" style="background:black">
                         <div class="image-container">
