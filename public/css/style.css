@@ -3,3 +3,15 @@
     margin-bottom: 15px;
     height: 55px;
 }
+
+
+.image-container{
+    width:100%;
+}
+
+.espaco{
+    margin-top:10px;
+}
+.description{
+    margin:10px;
+}

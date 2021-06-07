@@ -84,7 +84,8 @@ else {
                     <ul class="navbar-nav ml-auto" style="float: right;">
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('home')}}"> Inicio </a> 
-                        </li>	
+                        </li>
+                        
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
@@ -94,12 +95,16 @@ else {
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
+                                
                             @endif
                         @else
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('portugal')}}"> Portugal Wizarding </a> 
                         </li>
                         <li class="nav-item dropdown"></li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('image_create') }}">Carregar Imagem</a>
+                        </li>	
                         <li>
                             @include('includes/avatar')
                         </li>

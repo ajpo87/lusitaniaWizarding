@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Image;
 
 class HomeController extends Controller
 {
@@ -48,7 +49,8 @@ class HomeController extends Controller
              return redirect()->route('select_team')->with(['message' =>'Selecionado para os: '.$equipa]);
         }
          else{
-            return view('home');
+             $images = Image::Orderby('id','desc')->get(); 
+            return view('home', ['images'=>$images] );
          }
 
         
