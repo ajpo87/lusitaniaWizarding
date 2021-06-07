@@ -33,13 +33,13 @@
     $data = \Auth::User();
     if(isset($data)){
         switch ($data['id_team']) {
-         case 1: $background_img = "images/slytherin_room.jpg";
+         case 1: $background_img = "/images/slytherin_room.jpg";
               break;
-         case 2: $background_img = "images/ravenclaw_room.jpg";
+         case 2: $background_img = "/images/ravenclaw_room.jpg";
              break;
-         case 3: $background_img = "images/hufflepuff_room.jpg";
+         case 3: $background_img = "/images/hufflepuff_room.jpg";
              break;
-        case 4: $background_img = "images/gryffindor_room.jpg";
+        case 4: $background_img = "/images/gryffindor_room.jpg";
              break;
          
         default:
