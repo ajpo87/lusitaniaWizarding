@@ -36,4 +36,22 @@ class CommentController extends Controller
         return redirect()->route('image.detail',['id' =>$image_id])->with(['message' =>'Comentário Adicionado']);
 
     }
+
+    public function delete($id){
+         //conseguir utilizador identificado
+         $user =\Auth::user();
+         $id_user  = $user->id;
+
+         //conseguir objecto do commentario
+         $comment = Comment::find($id);
+
+         //comprovar se sou dono do comentario ou da imagem
+         if ($user && ($comment->user->id == $id_user ||$comment->image->user_id == $id_user ) ){
+             $comment->delete();
+            return redirect()->route('image.detail',['id' =>$comment->image->id])->with(['message' =>'Feitiço de apagar comentario realizido com sucesso']);
+         }else{
+            return redirect()->route('image.detail',['id' =>$comment->image->id])->with(['message' =>'Não foi possivel apagar o comentário']);   
+         }
+
+    }
 }

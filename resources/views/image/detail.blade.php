@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     @if(session('message'))
-        <div class="alert alert-sucess"> 
+        <div class="alert alert-sucess" style="color:rgb(158, 231, 129)"> 
             {{session('message')}} 
         </div>
     @endif
@@ -49,6 +49,7 @@
                         <img src="{{route('user.avatar' ,['filename'=>$image->user->image]  ) }}" class="avatar" />
                         {{ $image->user->name.' '.$image->user->surname}}
                         | Comentado faz  {{ \FormatTime::LongTimeFilter($comment->created_at) }}
+                        | <a href="{{route('commnent.delete',['id'=>$comment->id]) }}"> <span style="color:rgb(158, 231, 129)"> Obliviate </span> </a>
                             <p  class="comentario_content">{{$comment->content}} </p>
                     </div>
                     <hr style="background:goldenrod">

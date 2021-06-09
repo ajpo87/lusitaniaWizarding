@@ -45,4 +45,5 @@ Route::get('/image/file/{filename}','ImageController@getImage')->name('image.fil
 Route::get('/image/{id}','ImageController@detail')->name('image.detail'); 
 
 Route::POST('/comment/store','CommentController@store')->name('comment.store');
+Route::get('/comment/delete/{id}','CommentController@delete')->name('commnent.delete'); 
 
