@@ -28,8 +28,25 @@
                         </div>
                     </div>
                     <div class="likes">
-                        <img  class ="img_like" src="{{asset('/img/heart-black.png')}}"/>
-                        <a href="" class="btn btn-warning btn-comments" > Comentários({{count($image->comments)}}) </a>
+                        <?php 
+                            $user_like = false;
+                        ?>
+                        @foreach($image->likes as $like)
+                            @if($like->user->id == Auth::user()->id)
+                            <?php 
+                                $user_like = true;
+                            ?>
+                            @endif
+                        @endforeach
+
+                        @if($user_like)
+                            <img  class="img_dislike" src="{{asset('/img/heart-red.png')}}" data-id="{{$image->id}}"/>
+                        @else
+                            <img  class="img_like" src="{{asset('/img/heart-black.png')}}" data-id="{{$image->id}}"/>
+                        @endif
+                        {{count($image->likes)}} 
+                        <a href="" class="btn btn-warning btn-comments">Comentários({{count($image->comments)}})</a>
+                      
                     </div>
                     <div class="description">
                         {{$image->description}}

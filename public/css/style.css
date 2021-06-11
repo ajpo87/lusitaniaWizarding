@@ -25,7 +25,11 @@
     padding-bottom:0;
 }
 
-.img_like{
+.img_like {
+    width:20px;
+}
+
+.img_dislike {
     width:20px;
 }
 
