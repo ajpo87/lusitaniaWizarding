@@ -12,8 +12,10 @@
             <div class="card" >
                 @if($image->user->image)
                     <div class="container-avatar" style="background:grey">
+                        <a href="{{route('user.profile',['id'=>$image->user->id]) }}" >
                             <img src="{{route('user.avatar' ,['filename'=>$image->user->image]  ) }}" class="avatar" />
-                            {{ $image->user->name.' '.$image->user->surname}}
+                                {{ $image->user->name.' '.$image->user->surname}}
+                        </a>       
                             | Publicada  {{ \FormatTime::LongTimeFilter($image->created_at) }}
                     </div>
                     <div class="card-body" style="background:black">
@@ -65,8 +67,9 @@
                 @foreach($image->comments as $comment) 
                 <div class="comments">
                     <div class="container-avatar">
-                        <img src="{{route('user.avatar' ,['filename'=>$image->user->image]  ) }}" class="avatar" />
-                        {{ $image->user->name.' '.$image->user->surname}}
+                        <a href="{{route('user.profile',['id'=>$image->user->id]) }}" ><img src="{{route('user.avatar' ,['filename'=>$image->user->image]  ) }}" class="avatar" />
+                            {{ $image->user->name.' '.$image->user->surname}}
+                        </a>    
                         | Comentado faz  {{ \FormatTime::LongTimeFilter($comment->created_at) }}
                         | <a href="{{route('commnent.delete',['id'=>$comment->id]) }}"> <span style="color:rgb(158, 231, 129)"> Obliviate </span> </a>
                             <p  class="comentario_content">{{$comment->content}} </p>

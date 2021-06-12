@@ -34,6 +34,7 @@ Route::get('/wizardingPortugal','wizardingPortugalController@show_portugal')->na
 Route::POST('/user/update','UserController@update')->name('user.update');
 Route::POST('/user/update_password','UserController@update_password')->name('user.update_password');
 Route::POST('/user/getBackgroundByTeam','UserController@getBackgroundByTeam')->name('user.getBackgroundByTeam');
+Route::get('/user/profile/{id}','UserController@profile')->name('user.profile'); 
 
 Route::get('/select_team', 'TeamsController@index')->name('select_team');
 
@@ -48,6 +49,8 @@ Route::POST('/comment/store','CommentController@store')->name('comment.store');
 Route::get('/comment/delete/{id}','CommentController@delete')->name('commnent.delete'); 
 
 Route::get('/like/{image_id}','LikeController@like')->name('like.save');
-Route::get('/dislike/{id}','LikeController@dislike')->name('like.delete'); 
+Route::get('/dislike/{id}','LikeController@dislike')->name('like.delete');
+
+Route::get('/likes','LikeController@likes')->name('like.likes');
 
 

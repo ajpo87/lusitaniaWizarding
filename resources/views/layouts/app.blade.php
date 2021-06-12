@@ -100,6 +100,9 @@ else {
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('portugal')}}"> Portugal Wizarding </a> 
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('like.likes')}}"> Favoritas</a> 
+                        </li>
                         <li class="nav-item dropdown"></li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('image_create') }}">Carregar Imagem</a>
@@ -112,6 +115,9 @@ else {
                                 {{ Auth::user()->name }}
                             </a>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{route('user.profile',['id'=>Auth::user()->id ])}}">
+                                    Meu Perfil
+                                </a>
                                 <a class="dropdown-item" href="{{route('config')}}">
                                     Configurar Perfil
                                 </a>

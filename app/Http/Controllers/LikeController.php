@@ -50,4 +50,12 @@ class LikeController extends Controller
             return response()->json(['message'=>'Like nao existe'] );
          }
     }
+    public function likes(){
+        $user =\Auth::user();
+
+        $likes = Like::Orderby('id','desc')
+                    ->where('user_id',$user->id)
+                    ->paginate(2); 
+        return view('like.likes', ['likes'=>$likes] );
+    }
 }
