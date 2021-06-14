@@ -43,7 +43,10 @@ Route::get('/carregarImage','ImageController@CriarImagem')->name('image_create')
 Route::POST('/image/save','ImageController@save')->name('image.save');
 Route::get('/image/file/{filename}','ImageController@getImage')->name('image.file');
 Route::get('/image/file/{filename}','ImageController@getImage')->name('image.file'); 
-Route::get('/image/{id}','ImageController@detail')->name('image.detail'); 
+Route::get('/image/{id}','ImageController@detail')->name('image.detail');
+Route::get('/image/edit/{id}','ImageController@edit')->name('image.edit');
+Route::get('/image/delete/{id}','ImageController@delete')->name('image.delete');
+Route::POST('/image/update','ImageController@update')->name('image.update');
 
 Route::POST('/comment/store','CommentController@store')->name('comment.store');
 Route::get('/comment/delete/{id}','CommentController@delete')->name('commnent.delete'); 
