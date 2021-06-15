@@ -30,40 +30,39 @@
 
     // dd($__data); die;
     $data = \Auth::User();
+    $nav = null;
     if(isset($data)){
         switch ($data['id_team']) {
-         case 1: $background_img = "/images/slytherin_room.jpg";
+         case 1: $nav = '<nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm"  style="background: rgb(26,71,42);
+                                background: linear-gradient(128deg, rgba(26,71,42,1) 54%, rgba(170,170,170,1) 83%);">
+                                <img src="/images/logo_slytherin.png" class=" mx-auto " style="height: 85px;" />
+                        </nav>';
               break;
-         case 2: $background_img = "/images/ravenclaw_room.jpg";
+         case 2: $nav = '<nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm"  style="background: rgb(14,26,64);
+                                background: linear-gradient(43deg, rgba(14,26,64,1) 41%, rgba(93,93,93,1) 65%, rgba(34,47,91,1) 100%);">
+                                <img src="/images/logo_ravenclow.png" class=" mx-auto " style="height: 85px;" />
+                        </nav>';
              break;
-         case 3: $background_img = "/images/hufflepuff_room.jpg";
+         case 3: $nav = '<nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm"  style="background: rgb(255,219,0);
+                                background: linear-gradient(42deg, rgba(255,219,0,1) 38%, rgba(0,0,0,1) 85%);">
+                                <img src="/images/logo_hufflepuff.png" class=" mx-auto " style="height: 85px;" />
+                        </nav>';
              break;
-        case 4: $background_img = "/images/gryffindor_room.jpg";
-             break;
+        case 4: $nav = '<nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm"  style="background: rgb(204,9,0);
+                            background: linear-gradient(45deg, rgba(204,9,0,1) 48%, rgba(255,215,0,1) 75%);">
+                                <img src="/images/logo_grynfindor.png" class=" mx-auto " style="height: 85px;" />
+                        </nav>';
          
         default:
              $background_img = 'images/hogwarts.jpg;';
               break;
       }
-    }
-     
-     
-
-  
+    }  
 ?>
-<?php if( empty($data) || ( $data['first_time_login'] == true )){ ?>
-    <body style="background-image: url('images/hogwarts.jpg'); width: 100%;height: auto; background-repeat: no-repeat;background-size: cover;">
-<?php } 
-else {
-    ?>
 
-    <body style="background-image: url('<?php echo $background_img; ?>'); opacity:0.9; width: 100%;height: auto; background-repeat: no-repeat;background-size: cover;">
-<?php
-    }
-
-?>
-    
+    <body style="background-image: url('images/background_starts.jpg'); width: 100%;height: auto; background-repeat: no-repeat;background-size: cover;">
     <div id="app">
+        <?php echo $nav; ?>  
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
@@ -140,7 +139,7 @@ else {
                 </div>
             </div>
         </nav>
-
+        
         <main class="py-4">
             @yield('content')
         </main>

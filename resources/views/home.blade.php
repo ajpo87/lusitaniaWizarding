@@ -16,17 +16,18 @@
         <div class="col-md-8 espaco">
             <div class="card" >
                 @if($image->user->image)
-                    <div class="container-avatar" style="background:grey">
+                    <div class="container-avatar" style="background:#1c1c29">
                         <a href="{{route('user.profile',['id'=>$image->user->id]) }}" ><img src="{{route('user.avatar' ,['filename'=>$image->user->image]  ) }}" class="avatar" />
                             {{ $image->user->name.' '.$image->user->surname}}
                         </a>
                         | Publicada  {{ \FormatTime::LongTimeFilter($image->created_at) }}
 
                     </div>
-                    <div class="card-body" style="background:black">
+                    <div class="card-body" style="background:#1c1c29">
                         <div class="image-container">
-                           <a href="{{route('image.detail', ['id'=>$image->id]) }}" >  <img src="{{route('image.file',['filename' => $image->image_path])}}"></a>
+                           <a href="{{route('image.detail', ['id'=>$image->id]) }}" >  <img class="img-fluid mx-auto d-block" src="{{route('image.file',['filename' => $image->image_path])}}"></a>
                         </div>
+                        {{$image->description}}
                     </div>
                     <div class="likes">
                         <?php 
@@ -46,12 +47,10 @@
                             <img  class="img_like" src="{{asset('/img/heart-black.png')}}" data-id="{{$image->id}}"/>
                         @endif
                         {{count($image->likes)}} 
-                        <a href="" class="btn btn-warning btn-comments">Comentários({{count($image->comments)}})</a>
+                        <a href="{{route('image.detail', ['id'=>$image->id]) }}" class="btn btn-warning btn-comments">Comentários({{count($image->comments)}})</a>
                       
                     </div>
-                    <div class="description">
-                        {{$image->description}}
-                    </div>
+                   
                                      
                 @endif
             </div>   

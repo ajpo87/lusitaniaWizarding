@@ -91,7 +91,8 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Lusitania Wizarding
+                    <h2>Lusitania Wizarding</h2>
+                    <h4 style="color:white"> Magic is where you create </h4>
                 </div>
 
                 <!--<div class="links">

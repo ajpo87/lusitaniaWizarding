@@ -37,7 +37,7 @@
                                 $user_like = false;
                             ?>
                             @foreach($image->likes as $like)
-                                @if($like->user->id == Auth::user()->id)
+                                @if($like->image->user->id == Auth::user()->id)
                                 <?php 
                                     $user_like = true;
                                 ?>
