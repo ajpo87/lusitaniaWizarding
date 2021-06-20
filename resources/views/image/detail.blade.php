@@ -34,19 +34,19 @@
 
                                             <!-- Modal Header -->
                                             <div class="modal-header">
-                                                <h4 class="modal-title">¿Estas seguro?</h4>
+                                                <h4 class="modal-title">¿Tens a certeza?</h4>
                                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                                             </div>
 
                                             <!-- Modal body -->
                                             <div class="modal-body">
-                                                Si eliminar esta imagen nunca podrás recuperarla, ¿estas seguro de querer borrarla?
+                                                Se eliminares esta imagem poderás não recupera-la , ¿ apagar de certeza?
                                             </div>
 
                                             <!-- Modal footer -->
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-success" data-dismiss="modal">Cancelar</button>
-                                                <a href="{{ route('image.delete', ['id' => $image->id]) }}" class="btn btn-danger">Borrar definitivamente</a>
+                                                <a href="{{ route('image.delete', ['id' => $image->id]) }}" class="btn btn-danger">Apagar definitivamente</a>
                                             </div>
 
                                         </div>
