@@ -60,7 +60,7 @@
     }  
 ?>
 
-    <body style="background-image: url('images/background_starts.jpg'); width: 100%;height: auto; background-repeat: no-repeat;background-size: cover;">
+    <body style="background-image: url('/public/images/background_starts.jpg'); width: 100%;height: auto; background-repeat: no-repeat;background-size: cover;">
     <div id="app">
         <?php echo $nav; ?>  
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
