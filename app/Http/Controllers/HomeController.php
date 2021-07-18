@@ -49,8 +49,10 @@ class HomeController extends Controller
              return redirect()->route('select_team')->with(['message' =>'Selecionado para os: '.$equipa]);
         }
          else{
+
+            $teams = DB::select('select * from teams');
              $images = Image::Orderby('id','desc')->paginate(2); 
-            return view('home', ['images'=>$images] );
+            return view('home', ['images'=>$images, 'teams'=>$teams] );
          }
 
         

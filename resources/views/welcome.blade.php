@@ -33,7 +33,7 @@ h2{
   <div class="w3-row w3-padding w3-black">
     @auth
 	<div class="w3-col s3">
-      <a href="href="{{ url('/home') }}"" class="w3-button w3-block w3-black">HOME</a>
+      <a href="{{ url('/home') }}" class="w3-button w3-block w3-black">HOME</a>
     </div>
 	@else
     <div class="w3-col s3">

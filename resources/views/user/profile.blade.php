@@ -20,7 +20,7 @@
             @foreach($user->images as $image)
             <div class="col-md-10 espaco">
                 <div class="card" >
-                        <div class="container-avatar" style="background:grey">
+                          <div class="container-avatar" style="background:#1c1c29">
                             <a href="{{route('user.profile',['id'=>$image->user->id]) }}" ><img src="{{route('user.avatar' ,['filename'=>$image->user->image]  ) }}" class="avatar" />
                                 {{ $image->user->name.' '.$image->user->surname}}
                             </a>
@@ -29,7 +29,7 @@
                         </div>
                         <div class="card-body" style="background:black">
                             <div class="image-container">
-                               <a href="{{route('image.detail', ['id'=>$image->id]) }}" >  <img src="{{route('image.file',['filename' => $image->image_path])}}"></a>
+                               <a href="{{route('image.detail', ['id'=>$image->id]) }}" >  <img src="{{route('image.file',['filename' => $image->image_path])}}" class="img-fluid mx-auto d-block"></a>
                             </div>
                         </div>
                         <div class="likes">

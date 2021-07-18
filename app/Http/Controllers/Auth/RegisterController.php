@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
+use App\Team;
 use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
@@ -81,9 +82,18 @@ class RegisterController extends Controller
         return $id_equipa;
     }
 
+    public function UpdatePoints($id_equipa){
+       //$pontos_actuais = Team::find('pontos_equipa')->where('id',$id_equipa);
+
+       $equipa_aux = Team::find($id_equipa);
+       $autaliza_pontos = $equipa_aux->pontos_equipa + 1;
+       $equipa_aux->update(['pontos_equipa' => $autaliza_pontos]);
+    }
+
     protected function create(array $data)
     {
         $equipa =  $this->SelectionaEquipa();
+        $this->UpdatePoints($equipa);
 
         return User::create([
             'id_team' => $equipa,

@@ -1,16 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-<!-- TO DO TEAM POINTS
-        <div class="row">
-          <div class="col bg-success">.col-3</div>
-          <div class="col bg-warning">.col-3</div>
-          <div class="col bg-success">.col-3</div>
-          <div class="col bg-warning">.col-3</div>
-          <div class="col bg-success">.col-3</div>
-        </div>
-    -->
+
+@include('includes.points') 
+<div class="container" style="margin-top:5%">
     <div class="row justify-content-center">
         @foreach($images  as $image)
         <div class="col-md-8 espaco">
